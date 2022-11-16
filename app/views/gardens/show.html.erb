@@ -1,0 +1,25 @@
+
+<img src=<%= @garden.banner_url %> style="width: 100vw; height: 65vh; object-fit: cover;" alt="">
+
+<div style="margin: auto; width: 25%;">
+<%= render @garden %>
+
+    <div>
+        <%= simple_form_for [@garden, @plant] do |f|%>
+            <%= f.input :species %>
+            <%= f.input :img_url %>
+            <%= f.submit %>
+        <% end %>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <% @garden.plants.each do |plant| %>
+            <div class="col-3">
+                <img src=<%= plant.img_url %> alt="">
+                <%= plant.species %>
+            </div>
+        <% end %>
+    </div>
+</div>
