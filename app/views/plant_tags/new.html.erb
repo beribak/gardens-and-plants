@@ -1,0 +1,9 @@
+
+<div class="m-auto w-50 p-4">
+  <%= simple_form_for [@plant, @plant_tag] do |f|%>
+    <%= f.input :tag, collection: Tag.all, 
+        label_html: { class: '' },
+        input_html: { class: 'multiple-select', multiple: true }  %>
+    <%= f.submit %>
+  <% end %>
+</div>
